@@ -1,0 +1,1939 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS 常用英語單詞指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .top-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .info-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .info-box h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-size: 1.2rem;
+        }
+
+        .info-box ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .info-box li {
+            padding: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        .info-box a {
+            color: #3498db;
+            text-decoration: none;
+            display: block;
+            padding: 5px 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .info-box a:hover {
+            background-color: #f8f9fa;
+            padding-left: 10px;
+            transition: all 0.3s;
+        }
+
+        .safety-alerts {
+            background: linear-gradient(135deg, #1e3a2e, #2d5a3d) !important;
+            color: #f0f8f0 !important;
+            border: 4px solid #4a7c59 !important;
+            box-shadow:
+                inset 0 0 20px rgba(0,0,0,0.3),
+                0 8px 25px rgba(30, 58, 46, 0.4),
+                0 0 30px rgba(74, 124, 89, 0.3) !important;
+            position: relative !important;
+            background-image:
+                linear-gradient(90deg, rgba(240,248,240,0.1) 1px, transparent 1px),
+                linear-gradient(rgba(240,248,240,0.1) 1px, transparent 1px) !important;
+            background-size: 20px 20px !important;
+            animation: chalk-glow 3s ease-in-out infinite alternate !important;
+        }
+
+        .safety-alerts::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            background: linear-gradient(45deg, #4a7c59, #5d8f6b, #4a7c59, #3e6b4d);
+            border-radius: 13px;
+            z-index: -1;
+            animation: frame-shine 4s linear infinite;
+        }
+
+        .safety-alerts::after {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(240,248,240,0.1) 1px, transparent 1px),
+                radial-gradient(circle at 80% 80%, rgba(240,248,240,0.05) 1px, transparent 1px);
+            background-size: 15px 15px, 25px 25px;
+            pointer-events: none;
+            border-radius: 8px;
+        }
+
+        .safety-alerts h3 {
+            color: #f0f8f0 !important;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            font-size: 1.4rem !important;
+            margin-bottom: 20px !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+            font-family: 'Courier New', monospace !important;
+            font-weight: bold !important;
+            letter-spacing: 1px !important;
+        }
+
+        .safety-alerts h3::before {
+            content: '📚';
+            font-size: 1.6rem;
+            animation: book-flip 2s ease-in-out infinite;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+        }
+
+        .safety-alerts h3::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, #f0f8f0, transparent);
+            margin-left: 10px;
+        }
+
+        .safety-alerts li {
+            color: #f0f8f0 !important;
+            font-weight: 500 !important;
+            font-size: 0.95rem !important;
+            padding: 10px 15px !important;
+            margin: 5px 0 !important;
+            background: rgba(240,248,240,0.05) !important;
+            border-left: 3px solid #7fb069 !important;
+            border-radius: 0 8px 8px 0 !important;
+            transition: all 0.3s ease !important;
+            font-family: 'Courier New', monospace !important;
+            line-height: 1.4 !important;
+            position: relative !important;
+        }
+
+        .safety-alerts li::before {
+            content: '✓';
+            position: absolute;
+            left: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #7fb069;
+            color: #1e3a2e;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        .safety-alerts li:hover {
+            background: rgba(240,248,240,0.15) !important;
+            border-left-color: #a8d5ba !important;
+            transform: translateX(5px) !important;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
+        }
+
+        .safety-alerts li:hover::before {
+            background: #a8d5ba;
+            transform: translateY(-50%) scale(1.2);
+        }
+
+        @keyframes chalk-glow {
+            0% {
+                box-shadow:
+                    inset 0 0 20px rgba(0,0,0,0.3),
+                    0 8px 25px rgba(30, 58, 46, 0.4),
+                    0 0 20px rgba(74, 124, 89, 0.2);
+            }
+            100% {
+                box-shadow:
+                    inset 0 0 25px rgba(0,0,0,0.4),
+                    0 8px 30px rgba(30, 58, 46, 0.5),
+                    0 0 35px rgba(74, 124, 89, 0.4);
+            }
+        }
+
+        @keyframes frame-shine {
+            0%, 100% {
+                background: linear-gradient(45deg, #4a7c59, #5d8f6b, #4a7c59, #3e6b4d);
+            }
+            25% {
+                background: linear-gradient(45deg, #5d8f6b, #4a7c59, #3e6b4d, #4a7c59);
+            }
+            50% {
+                background: linear-gradient(45deg, #4a7c59, #3e6b4d, #5d8f6b, #4a7c59);
+            }
+            75% {
+                background: linear-gradient(45deg, #3e6b4d, #4a7c59, #4a7c59, #5d8f6b);
+            }
+        }
+
+        @keyframes book-flip {
+            0%, 100% { transform: rotateY(0deg); }
+            50% { transform: rotateY(15deg); }
+        }
+
+
+
+        .nav-btn {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            padding: 12px 24px;
+            margin: 0 10px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #495057;
+        }
+
+        .nav-btn:hover {
+            background: #e9ecef;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .nav-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: #667eea;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        .confusing-item {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .confusing-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+
+        .confusing-content {
+            display: grid;
+            gap: 15px;
+        }
+
+        .term-explanation {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .term-explanation h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .term-explanation ul {
+            margin: 0;
+            list-style: none;
+            padding: 0;
+        }
+
+        .term-explanation li {
+            padding: 3px 0;
+            font-size: 0.9rem;
+        }
+
+        .warning-box, .tip-box {
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        .search-box {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .word-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .word-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .word-english {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.1rem;
+        }
+
+        .word-chinese {
+            color: #7f8c8d;
+            margin-left: 10px;
+        }
+
+        .word-consequence {
+            font-size: 0.9rem;
+            color: #666;
+            max-width: 200px;
+            text-align: right;
+        }
+
+        .danger { background-color: #fee; border-left: 4px solid #e74c3c; }
+        .safe { background-color: #efe; border-left: 4px solid #27ae60; }
+        .warning { background-color: #fff3cd; border-left: 4px solid #f39c12; }
+        .info { background-color: #e3f2fd; border-left: 4px solid #3498db; }
+
+        .tips {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            grid-column: 1 / -1;
+        }
+
+        .tips h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .tips ul {
+            list-style: none;
+        }
+
+        .tips li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .tips li:before {
+            content: "⚠️";
+            position: absolute;
+            left: 0;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .top-info {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .word-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .word-consequence {
+                text-align: left;
+                max-width: 100%;
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 AWS 常用英語單詞指南</h1>
+            <p>避免操作失誤，安全使用AWS服務</p>
+        </div>
+
+        <!-- 頂部信息區域 -->
+        <div class="top-info">
+            <div class="info-box safety-alerts">
+                <h3>🎯 重要安全提醒</h3>
+                <ul>
+                    <li>⚠️ 看到 "Delete/Terminate/Remove" 要三思</li>
+                    <li>✅ "Stop" 是安全的，"Terminate" 是危險的</li>
+                    <li>💰 "Free Tier" 標記的服務通常免費</li>
+                    <li>⚡ "Spot Instance" 便宜但不穩定</li>
+                    <li>📋 操作前先看 "Review" 頁面</li>
+                    <li>💳 定期檢查 Billing Dashboard 避免意外費用</li>
+                    <li>📊 使用 CloudWatch 監控資源使用情況</li>
+                    <li>🔔 設置 Billing Alerts 防止超支</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h3>🔗 常用AWS網址</h3>
+                <a href="https://console.aws.amazon.com" target="_blank">🏠 AWS控制台 (console.aws.amazon.com)</a>
+                <a href="https://console.aws.amazon.com/billing" target="_blank">💰 計費儀表板 (查看費用)</a>
+                <a href="https://console.aws.amazon.com/billing/home#/freetier" target="_blank">🆓 免費套餐使用情況</a>
+                <a href="https://docs.aws.amazon.com" target="_blank">📚 AWS文檔 (docs.aws.amazon.com)</a>
+                <a href="https://status.aws.amazon.com" target="_blank">📊 AWS服務狀態</a>
+                <a href="https://calculator.aws" target="_blank">🧮 價格計算器</a>
+                <a href="https://aws.amazon.com/training" target="_blank">🎓 AWS培訓中心</a>
+                <a href="https://aws.amazon.com/support" target="_blank">🆘 AWS支持中心</a>
+                <a href="https://awsjp.com/AWS/hikaku/list0.html" target="_blank">🔍 AWS服務詳細比較 (日文資源)</a>
+            </div>
+        </div>
+
+        <!-- 導航菜單 -->
+        <div style="background: white; padding: 15px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+            <button onclick="showSection('vocabulary')" class="nav-btn active" id="vocab-btn">📚 基礎詞彙</button>
+            <button onclick="showSection('complete')" class="nav-btn" id="complete-btn">📖 完整詞彙表</button>
+            <button onclick="showSection('confusing')" class="nav-btn" id="conf-btn">🤔 容易混淆的AWS用語</button>
+        </div>
+
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="🔍 搜索英文單詞或中文含義...">
+        </div>
+
+        <!-- 詞彙表區域 -->
+        <div id="vocabulary-section" class="content-section active">
+            <div class="grid">
+            <!-- 危險操作按鈕 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">🚨</span>
+                    <h2 class="card-title">危險操作按鈕</h2>
+                </div>
+                <div class="word-list">
+                    <div class="word-item danger">
+                        <div>
+                            <span class="word-english">Delete</span>
+                            <span class="word-chinese">刪除</span>
+                        </div>
+                        <div class="word-consequence">⚠️ 永久刪除資源，無法恢復</div>
+                    </div>
+                    <div class="word-item danger">
+                        <div>
+                            <span class="word-english">Terminate</span>
+                            <span class="word-chinese">終止</span>
+                        </div>
+                        <div class="word-consequence">⚠️ 停止並刪除EC2實例</div>
+                    </div>
+                    <div class="word-item danger">
+                        <div>
+                            <span class="word-english">Remove</span>
+                            <span class="word-chinese">移除</span>
+                        </div>
+                        <div class="word-consequence">⚠️ 從組或列表中移除</div>
+                    </div>
+                    <div class="word-item danger">
+                        <div>
+                            <span class="word-english">Destroy</span>
+                            <span class="word-chinese">銷毀</span>
+                        </div>
+                        <div class="word-consequence">⚠️ 完全刪除基礎設施</div>
+                    </div>
+                    <div class="word-item danger">
+                        <div>
+                            <span class="word-english">Force</span>
+                            <span class="word-chinese">強制</span>
+                        </div>
+                        <div class="word-consequence">⚠️ 跳過安全檢查</div>
+                    </div>
+                    <div class="word-item danger">
+                        <div>
+                            <span class="word-english">Detach</span>
+                            <span class="word-chinese">分離</span>
+                        </div>
+                        <div class="word-consequence">⚠️ 斷開連接，可能影響服務</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 安全操作按鈕 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">✅</span>
+                    <h2 class="card-title">安全操作按鈕</h2>
+                </div>
+                <div class="word-list">
+                    <div class="word-item safe">
+                        <div>
+                            <span class="word-english">Create</span>
+                            <span class="word-chinese">創建</span>
+                        </div>
+                        <div class="word-consequence">✅ 新建資源</div>
+                    </div>
+                    <div class="word-item safe">
+                        <div>
+                            <span class="word-english">Launch</span>
+                            <span class="word-chinese">啟動</span>
+                        </div>
+                        <div class="word-consequence">✅ 開始新的實例或服務</div>
+                    </div>
+                    <div class="word-item safe">
+                        <div>
+                            <span class="word-english">Start</span>
+                            <span class="word-chinese">開始</span>
+                        </div>
+                        <div class="word-consequence">✅ 啟動已停止的資源</div>
+                    </div>
+                    <div class="word-item safe">
+                        <div>
+                            <span class="word-english">Stop</span>
+                            <span class="word-chinese">停止</span>
+                        </div>
+                        <div class="word-consequence">✅ 暫停資源，可重新啟動</div>
+                    </div>
+                    <div class="word-item safe">
+                        <div>
+                            <span class="word-english">Restart</span>
+                            <span class="word-chinese">重啟</span>
+                        </div>
+                        <div class="word-consequence">✅ 重新啟動資源</div>
+                    </div>
+                    <div class="word-item safe">
+                        <div>
+                            <span class="word-english">View</span>
+                            <span class="word-chinese">查看</span>
+                        </div>
+                        <div class="word-consequence">✅ 只讀操作，安全</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 常見狀態詞 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">📋</span>
+                    <h2 class="card-title">常見狀態詞</h2>
+                </div>
+                <div class="word-list">
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">Running</span>
+                            <span class="word-chinese">運行中</span>
+                        </div>
+                        <div class="word-consequence">正常工作狀態</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">Stopped</span>
+                            <span class="word-chinese">已停止</span>
+                        </div>
+                        <div class="word-consequence">暫停，可重啟</div>
+                    </div>
+                    <div class="word-item warning">
+                        <div>
+                            <span class="word-english">Pending</span>
+                            <span class="word-chinese">等待中</span>
+                        </div>
+                        <div class="word-consequence">正在處理</div>
+                    </div>
+                    <div class="word-item safe">
+                        <div>
+                            <span class="word-english">Available</span>
+                            <span class="word-chinese">可用</span>
+                        </div>
+                        <div class="word-consequence">準備就緒</div>
+                    </div>
+                    <div class="word-item warning">
+                        <div>
+                            <span class="word-english">In-use</span>
+                            <span class="word-chinese">使用中</span>
+                        </div>
+                        <div class="word-consequence">正被其他資源使用</div>
+                    </div>
+                    <div class="word-item danger">
+                        <div>
+                            <span class="word-english">Failed</span>
+                            <span class="word-chinese">失敗</span>
+                        </div>
+                        <div class="word-consequence">操作未成功</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 配置相關詞彙 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">🔧</span>
+                    <h2 class="card-title">配置相關詞彙</h2>
+                </div>
+                <div class="word-list">
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">Instance Type</span>
+                            <span class="word-chinese">實例類型</span>
+                        </div>
+                        <div class="word-consequence">決定CPU、內存大小</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">Security Group</span>
+                            <span class="word-chinese">安全組</span>
+                        </div>
+                        <div class="word-consequence">防火牆規則</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">Key Pair</span>
+                            <span class="word-chinese">密鑰對</span>
+                        </div>
+                        <div class="word-consequence">SSH登錄憑證</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">VPC</span>
+                            <span class="word-chinese">虛擬私有雲</span>
+                        </div>
+                        <div class="word-consequence">隔離的網絡環境</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">AMI</span>
+                            <span class="word-chinese">鏡像</span>
+                        </div>
+                        <div class="word-consequence">系統模板</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">Snapshot</span>
+                            <span class="word-chinese">快照</span>
+                        </div>
+                        <div class="word-consequence">備份副本</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 計費相關詞彙 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">💰</span>
+                    <h2 class="card-title">計費相關詞彙</h2>
+                </div>
+                <div class="word-list">
+                    <div class="word-item warning">
+                        <div>
+                            <span class="word-english">On-Demand</span>
+                            <span class="word-chinese">按需付費</span>
+                        </div>
+                        <div class="word-consequence">最貴但靈活</div>
+                    </div>
+                    <div class="word-item safe">
+                        <div>
+                            <span class="word-english">Reserved</span>
+                            <span class="word-chinese">預留實例</span>
+                        </div>
+                        <div class="word-consequence">長期使用更便宜</div>
+                    </div>
+                    <div class="word-item warning">
+                        <div>
+                            <span class="word-english">Spot</span>
+                            <span class="word-chinese">競價實例</span>
+                        </div>
+                        <div class="word-consequence">最便宜但可能被中斷</div>
+                    </div>
+                    <div class="word-item safe">
+                        <div>
+                            <span class="word-english">Free Tier</span>
+                            <span class="word-chinese">免費套餐</span>
+                        </div>
+                        <div class="word-consequence">新用戶12個月免費額度</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AWS服務名稱 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">☁️</span>
+                    <h2 class="card-title">AWS核心服務</h2>
+                </div>
+                <div class="word-list">
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">EC2</span>
+                            <span class="word-chinese">彈性計算雲</span>
+                        </div>
+                        <div class="word-consequence">虛擬服務器</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">S3</span>
+                            <span class="word-chinese">簡單存儲服務</span>
+                        </div>
+                        <div class="word-consequence">對象存儲</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">RDS</span>
+                            <span class="word-chinese">關係數據庫服務</span>
+                        </div>
+                        <div class="word-consequence">託管數據庫</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">Lambda</span>
+                            <span class="word-chinese">無服務器計算</span>
+                        </div>
+                        <div class="word-consequence">函數即服務</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">CloudFront</span>
+                            <span class="word-chinese">內容分發網絡</span>
+                        </div>
+                        <div class="word-consequence">全球CDN服務</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">Route 53</span>
+                            <span class="word-chinese">DNS服務</span>
+                        </div>
+                        <div class="word-consequence">域名解析</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 網絡相關詞彙 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">🌐</span>
+                    <h2 class="card-title">網絡相關詞彙</h2>
+                </div>
+                <div class="word-list">
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">Load Balancer</span>
+                            <span class="word-chinese">負載均衡器</span>
+                        </div>
+                        <div class="word-consequence">分散流量</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">Auto Scaling</span>
+                            <span class="word-chinese">自動擴展</span>
+                        </div>
+                        <div class="word-consequence">自動調整資源</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">Internet Gateway</span>
+                            <span class="word-chinese">互聯網網關</span>
+                        </div>
+                        <div class="word-consequence">連接互聯網</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">NAT Gateway</span>
+                            <span class="word-chinese">網絡地址轉換網關</span>
+                        </div>
+                        <div class="word-consequence">私有子網訪問互聯網</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">Elastic IP</span>
+                            <span class="word-chinese">彈性IP</span>
+                        </div>
+                        <div class="word-consequence">固定公網IP</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">CIDR Block</span>
+                            <span class="word-chinese">無類域間路由</span>
+                        </div>
+                        <div class="word-consequence">IP地址範圍</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 存儲相關詞彙 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">💾</span>
+                    <h2 class="card-title">存儲相關詞彙</h2>
+                </div>
+                <div class="word-list">
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">EBS</span>
+                            <span class="word-chinese">彈性塊存儲</span>
+                        </div>
+                        <div class="word-consequence">虛擬硬盤</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">EFS</span>
+                            <span class="word-chinese">彈性文件系統</span>
+                        </div>
+                        <div class="word-consequence">共享文件存儲</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">Glacier</span>
+                            <span class="word-chinese">冰川存儲</span>
+                        </div>
+                        <div class="word-consequence">長期歸檔存儲</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">Storage Class</span>
+                            <span class="word-chinese">存儲類別</span>
+                        </div>
+                        <div class="word-consequence">不同價格和性能</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">Lifecycle</span>
+                            <span class="word-chinese">生命週期</span>
+                        </div>
+                        <div class="word-consequence">自動管理數據</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">Versioning</span>
+                            <span class="word-chinese">版本控制</span>
+                        </div>
+                        <div class="word-consequence">保留文件歷史版本</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 數據庫相關詞彙 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">🗄️</span>
+                    <h2 class="card-title">數據庫相關詞彙</h2>
+                </div>
+                <div class="word-list">
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">DynamoDB</span>
+                            <span class="word-chinese">NoSQL數據庫</span>
+                        </div>
+                        <div class="word-consequence">鍵值對數據庫</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">Aurora</span>
+                            <span class="word-chinese">高性能數據庫</span>
+                        </div>
+                        <div class="word-consequence">MySQL/PostgreSQL兼容</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">ElastiCache</span>
+                            <span class="word-chinese">內存緩存</span>
+                        </div>
+                        <div class="word-consequence">Redis/Memcached</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">Read Replica</span>
+                            <span class="word-chinese">只讀副本</span>
+                        </div>
+                        <div class="word-consequence">提高讀取性能</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">Multi-AZ</span>
+                            <span class="word-chinese">多可用區</span>
+                        </div>
+                        <div class="word-consequence">高可用性部署</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">Backup</span>
+                            <span class="word-chinese">備份</span>
+                        </div>
+                        <div class="word-consequence">數據保護</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 開發工具詞彙 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">🛠️</span>
+                    <h2 class="card-title">開發工具詞彙</h2>
+                </div>
+                <div class="word-list">
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">CodeCommit</span>
+                            <span class="word-chinese">代碼倉庫</span>
+                        </div>
+                        <div class="word-consequence">Git代碼管理</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">CodeBuild</span>
+                            <span class="word-chinese">代碼構建</span>
+                        </div>
+                        <div class="word-consequence">編譯和測試代碼</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">CodeDeploy</span>
+                            <span class="word-chinese">代碼部署</span>
+                        </div>
+                        <div class="word-consequence">自動化部署</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">CodePipeline</span>
+                            <span class="word-chinese">代碼管道</span>
+                        </div>
+                        <div class="word-consequence">CI/CD流水線</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">CloudFormation</span>
+                            <span class="word-chinese">基礎設施即代碼</span>
+                        </div>
+                        <div class="word-consequence">模板化部署</div>
+                    </div>
+                    <div class="word-item info">
+                        <div>
+                            <span class="word-english">Elastic Beanstalk</span>
+                            <span class="word-chinese">應用部署平台</span>
+                        </div>
+                        <div class="word-consequence">簡化應用部署</div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            </div>
+        </div>
+
+        <!-- 完整AWS詞彙表區域 -->
+        <div id="complete-section" class="content-section">
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-header">
+                    <span class="card-icon">📚</span>
+                    <h2 class="card-title">完整AWS詞彙表</h2>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                    <div class="word-list">
+                        <h4 style="color: #2c3e50; margin-bottom: 10px;">🔐 安全與身份</h4>
+                        <div class="word-item info">
+                            <div><span class="word-english">IAM</span><span class="word-chinese">身份訪問管理</span></div>
+                            <div class="word-consequence">用戶權限控制</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Cognito</span><span class="word-chinese">用戶身份池</span></div>
+                            <div class="word-consequence">用戶認證服務</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">KMS</span><span class="word-chinese">密鑰管理服務</span></div>
+                            <div class="word-consequence">加密密鑰管理</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Certificate Manager</span><span class="word-chinese">證書管理器</span></div>
+                            <div class="word-consequence">SSL/TLS證書</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">WAF</span><span class="word-chinese">Web應用防火牆</span></div>
+                            <div class="word-consequence">Web安全防護</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Shield</span><span class="word-chinese">DDoS防護</span></div>
+                            <div class="word-consequence">攻擊防護服務</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">GuardDuty</span><span class="word-chinese">威脅檢測</span></div>
+                            <div class="word-consequence">智能威脅檢測</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Inspector</span><span class="word-chinese">安全評估</span></div>
+                            <div class="word-consequence">應用安全評估</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Macie</span><span class="word-chinese">數據安全</span></div>
+                            <div class="word-consequence">敏感數據發現</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Config</span><span class="word-chinese">配置管理</span></div>
+                            <div class="word-consequence">資源配置監控</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">CloudTrail</span><span class="word-chinese">審計日誌</span></div>
+                            <div class="word-consequence">API調用記錄</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Secrets Manager</span><span class="word-chinese">密鑰管理</span></div>
+                            <div class="word-consequence">應用密鑰存儲</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Systems Manager</span><span class="word-chinese">系統管理器</span></div>
+                            <div class="word-consequence">運維管理工具</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Directory Service</span><span class="word-chinese">目錄服務</span></div>
+                            <div class="word-consequence">Active Directory</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Single Sign-On</span><span class="word-chinese">單點登錄</span></div>
+                            <div class="word-consequence">SSO身份管理</div>
+                        </div>
+                    </div>
+
+                    <div class="word-list">
+                        <h4 style="color: #2c3e50; margin-bottom: 10px;">📊 分析與機器學習</h4>
+                        <div class="word-item info">
+                            <div><span class="word-english">SageMaker</span><span class="word-chinese">機器學習平台</span></div>
+                            <div class="word-consequence">ML模型開發</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Redshift</span><span class="word-chinese">數據倉庫</span></div>
+                            <div class="word-consequence">大數據分析</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Kinesis</span><span class="word-chinese">實時數據流</span></div>
+                            <div class="word-consequence">流數據處理</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">EMR</span><span class="word-chinese">彈性MapReduce</span></div>
+                            <div class="word-consequence">大數據處理</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Athena</span><span class="word-chinese">無服務器查詢</span></div>
+                            <div class="word-consequence">S3數據查詢</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">QuickSight</span><span class="word-chinese">商業智能</span></div>
+                            <div class="word-consequence">數據可視化</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Glue</span><span class="word-chinese">數據集成</span></div>
+                            <div class="word-consequence">ETL數據處理</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Lake Formation</span><span class="word-chinese">數據湖構建</span></div>
+                            <div class="word-consequence">數據湖管理</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">DataSync</span><span class="word-chinese">數據同步</span></div>
+                            <div class="word-consequence">數據傳輸服務</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Data Pipeline</span><span class="word-chinese">數據管道</span></div>
+                            <div class="word-consequence">數據工作流</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Comprehend</span><span class="word-chinese">自然語言處理</span></div>
+                            <div class="word-consequence">文本分析AI</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Rekognition</span><span class="word-chinese">圖像識別</span></div>
+                            <div class="word-consequence">圖像視頻分析</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Textract</span><span class="word-chinese">文檔分析</span></div>
+                            <div class="word-consequence">文檔數據提取</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Translate</span><span class="word-chinese">機器翻譯</span></div>
+                            <div class="word-consequence">多語言翻譯</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Polly</span><span class="word-chinese">語音合成</span></div>
+                            <div class="word-consequence">文字轉語音</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Transcribe</span><span class="word-chinese">語音識別</span></div>
+                            <div class="word-consequence">語音轉文字</div>
+                        </div>
+                    </div>
+
+                    <div class="word-list">
+                        <h4 style="color: #2c3e50; margin-bottom: 10px;">🔄 集成與消息</h4>
+                        <div class="word-item info">
+                            <div><span class="word-english">SQS</span><span class="word-chinese">簡單隊列服務</span></div>
+                            <div class="word-consequence">消息隊列</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">SNS</span><span class="word-chinese">簡單通知服務</span></div>
+                            <div class="word-consequence">推送通知</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">EventBridge</span><span class="word-chinese">事件總線</span></div>
+                            <div class="word-consequence">事件驅動架構</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Step Functions</span><span class="word-chinese">狀態機</span></div>
+                            <div class="word-consequence">工作流編排</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">API Gateway</span><span class="word-chinese">API網關</span></div>
+                            <div class="word-consequence">API管理</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">AppSync</span><span class="word-chinese">GraphQL API</span></div>
+                            <div class="word-consequence">實時API服務</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">MQ</span><span class="word-chinese">消息代理</span></div>
+                            <div class="word-consequence">託管消息代理</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">MSK</span><span class="word-chinese">Kafka服務</span></div>
+                            <div class="word-consequence">託管Kafka</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">SWF</span><span class="word-chinese">簡單工作流</span></div>
+                            <div class="word-consequence">工作流服務</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">AppFlow</span><span class="word-chinese">應用集成</span></div>
+                            <div class="word-consequence">SaaS數據集成</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">EventBridge Pipes</span><span class="word-chinese">事件管道</span></div>
+                            <div class="word-consequence">點對點集成</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">EventBridge Scheduler</span><span class="word-chinese">事件調度器</span></div>
+                            <div class="word-consequence">定時任務調度</div>
+                        </div>
+                    </div>
+
+                    <div class="word-list">
+                        <h4 style="color: #2c3e50; margin-bottom: 10px;">🏗️ 容器與微服務</h4>
+                        <div class="word-item info">
+                            <div><span class="word-english">ECS</span><span class="word-chinese">彈性容器服務</span></div>
+                            <div class="word-consequence">Docker容器管理</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">EKS</span><span class="word-chinese">彈性Kubernetes服務</span></div>
+                            <div class="word-consequence">Kubernetes集群</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Fargate</span><span class="word-chinese">無服務器容器</span></div>
+                            <div class="word-consequence">無需管理服務器</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">ECR</span><span class="word-chinese">彈性容器註冊表</span></div>
+                            <div class="word-consequence">Docker鏡像倉庫</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">App Runner</span><span class="word-chinese">應用運行器</span></div>
+                            <div class="word-consequence">容器化應用部署</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Copilot</span><span class="word-chinese">容器應用CLI</span></div>
+                            <div class="word-consequence">簡化容器部署</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Batch</span><span class="word-chinese">批處理</span></div>
+                            <div class="word-consequence">大規模批處理作業</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">ParallelCluster</span><span class="word-chinese">並行集群</span></div>
+                            <div class="word-consequence">HPC高性能計算</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Lightsail</span><span class="word-chinese">輕量級雲</span></div>
+                            <div class="word-consequence">簡化VPS服務</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Outposts</span><span class="word-chinese">本地擴展</span></div>
+                            <div class="word-consequence">本地AWS基礎設施</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Wavelength</span><span class="word-chinese">邊緣計算</span></div>
+                            <div class="word-consequence">5G邊緣計算</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Local Zones</span><span class="word-chinese">本地區域</span></div>
+                            <div class="word-consequence">超低延遲計算</div>
+                        </div>
+                    </div>
+
+                    <div class="word-list">
+                        <h4 style="color: #2c3e50; margin-bottom: 10px;">💾 存儲進階</h4>
+                        <div class="word-item info">
+                            <div><span class="word-english">Storage Gateway</span><span class="word-chinese">存儲網關</span></div>
+                            <div class="word-consequence">混合雲存儲</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">FSx</span><span class="word-chinese">高性能文件系統</span></div>
+                            <div class="word-consequence">Lustre/Windows文件系統</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Backup</span><span class="word-chinese">備份服務</span></div>
+                            <div class="word-consequence">集中備份管理</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">DataSync</span><span class="word-chinese">數據同步</span></div>
+                            <div class="word-consequence">在線數據傳輸</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Snow Family</span><span class="word-chinese">雪花設備</span></div>
+                            <div class="word-consequence">離線數據傳輸</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Snowball</span><span class="word-chinese">雪球設備</span></div>
+                            <div class="word-consequence">PB級數據傳輸</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Snowmobile</span><span class="word-chinese">雪車設備</span></div>
+                            <div class="word-consequence">EB級數據傳輸</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Transfer Family</span><span class="word-chinese">文件傳輸</span></div>
+                            <div class="word-consequence">SFTP/FTPS/FTP服務</div>
+                        </div>
+                    </div>
+
+                    <div class="word-list">
+                        <h4 style="color: #2c3e50; margin-bottom: 10px;">🌐 網絡進階</h4>
+                        <div class="word-item info">
+                            <div><span class="word-english">Direct Connect</span><span class="word-chinese">專線連接</span></div>
+                            <div class="word-consequence">專用網絡連接</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Transit Gateway</span><span class="word-chinese">傳輸網關</span></div>
+                            <div class="word-consequence">網絡中心樞紐</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">VPN</span><span class="word-chinese">虛擬專用網</span></div>
+                            <div class="word-consequence">加密網絡連接</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">PrivateLink</span><span class="word-chinese">私有鏈接</span></div>
+                            <div class="word-consequence">私有網絡訪問</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Global Accelerator</span><span class="word-chinese">全球加速器</span></div>
+                            <div class="word-consequence">全球網絡優化</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">App Mesh</span><span class="word-chinese">應用網格</span></div>
+                            <div class="word-consequence">微服務網絡</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Cloud Map</span><span class="word-chinese">雲地圖</span></div>
+                            <div class="word-consequence">服務發現</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Client VPN</span><span class="word-chinese">客戶端VPN</span></div>
+                            <div class="word-consequence">遠程訪問VPN</div>
+                        </div>
+                    </div>
+
+                    <div class="word-list">
+                        <h4 style="color: #2c3e50; margin-bottom: 10px;">🗄️ 數據庫進階</h4>
+                        <div class="word-item info">
+                            <div><span class="word-english">DocumentDB</span><span class="word-chinese">文檔數據庫</span></div>
+                            <div class="word-consequence">MongoDB兼容</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Neptune</span><span class="word-chinese">圖數據庫</span></div>
+                            <div class="word-consequence">圖形數據庫</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Timestream</span><span class="word-chinese">時序數據庫</span></div>
+                            <div class="word-consequence">時間序列數據</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">QLDB</span><span class="word-chinese">量子賬本數據庫</span></div>
+                            <div class="word-consequence">不可變賬本</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Keyspaces</span><span class="word-chinese">Cassandra服務</span></div>
+                            <div class="word-consequence">託管Cassandra</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">MemoryDB</span><span class="word-chinese">內存數據庫</span></div>
+                            <div class="word-consequence">Redis兼容內存DB</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Database Migration Service</span><span class="word-chinese">數據庫遷移</span></div>
+                            <div class="word-consequence">DMS數據庫遷移</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Schema Conversion Tool</span><span class="word-chinese">架構轉換工具</span></div>
+                            <div class="word-consequence">數據庫架構轉換</div>
+                        </div>
+                    </div>
+
+                    <div class="word-list">
+                        <h4 style="color: #2c3e50; margin-bottom: 10px;">🛠️ 開發運維進階</h4>
+                        <div class="word-item info">
+                            <div><span class="word-english">Cloud9</span><span class="word-chinese">雲端IDE</span></div>
+                            <div class="word-consequence">在線開發環境</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">CodeStar</span><span class="word-chinese">項目管理</span></div>
+                            <div class="word-consequence">開發項目模板</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">CodeGuru</span><span class="word-chinese">代碼審查</span></div>
+                            <div class="word-consequence">AI代碼分析</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">CodeArtifact</span><span class="word-chinese">軟件包倉庫</span></div>
+                            <div class="word-consequence">私有包管理</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">X-Ray</span><span class="word-chinese">分佈式追蹤</span></div>
+                            <div class="word-consequence">應用性能分析</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">CloudShell</span><span class="word-chinese">雲端終端</span></div>
+                            <div class="word-consequence">瀏覽器命令行</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Tools for PowerShell</span><span class="word-chinese">PowerShell工具</span></div>
+                            <div class="word-consequence">Windows管理工具</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">CLI</span><span class="word-chinese">命令行界面</span></div>
+                            <div class="word-consequence">AWS命令行工具</div>
+                        </div>
+                    </div>
+
+                    <div class="word-list">
+                        <h4 style="color: #2c3e50; margin-bottom: 10px;">📱 移動與前端</h4>
+                        <div class="word-item info">
+                            <div><span class="word-english">Amplify</span><span class="word-chinese">全棧開發平台</span></div>
+                            <div class="word-consequence">前端後端一體化</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Device Farm</span><span class="word-chinese">設備測試</span></div>
+                            <div class="word-consequence">移動應用測試</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Pinpoint</span><span class="word-chinese">用戶分析</span></div>
+                            <div class="word-consequence">移動應用分析</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">AppStream</span><span class="word-chinese">應用流</span></div>
+                            <div class="word-consequence">應用虛擬化</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">WorkSpaces</span><span class="word-chinese">虛擬桌面</span></div>
+                            <div class="word-consequence">雲端桌面服務</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">WorkLink</span><span class="word-chinese">安全瀏覽</span></div>
+                            <div class="word-consequence">企業移動瀏覽</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">WorkDocs</span><span class="word-chinese">文檔協作</span></div>
+                            <div class="word-consequence">企業文檔管理</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">WorkMail</span><span class="word-chinese">企業郵箱</span></div>
+                            <div class="word-consequence">託管郵件服務</div>
+                        </div>
+                    </div>
+
+                    <div class="word-list">
+                        <h4 style="color: #2c3e50; margin-bottom: 10px;">🎮 媒體與遊戲</h4>
+                        <div class="word-item info">
+                            <div><span class="word-english">GameLift</span><span class="word-chinese">遊戲服務器</span></div>
+                            <div class="word-consequence">多人遊戲託管</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Elemental MediaLive</span><span class="word-chinese">實時視頻</span></div>
+                            <div class="word-consequence">直播視頻處理</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Elemental MediaConvert</span><span class="word-chinese">視頻轉碼</span></div>
+                            <div class="word-consequence">視頻格式轉換</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Elemental MediaStore</span><span class="word-chinese">媒體存儲</span></div>
+                            <div class="word-consequence">視頻內容存儲</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Elemental MediaPackage</span><span class="word-chinese">媒體打包</span></div>
+                            <div class="word-consequence">視頻內容分發</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Interactive Video Service</span><span class="word-chinese">互動視頻</span></div>
+                            <div class="word-consequence">低延遲直播</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Nimble Studio</span><span class="word-chinese">創意工作室</span></div>
+                            <div class="word-consequence">內容創作平台</div>
+                        </div>
+                        <div class="word-item info">
+                            <div><span class="word-english">Thinkbox Deadline</span><span class="word-chinese">渲染管理</span></div>
+                            <div class="word-consequence">渲染農場管理</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+
+
+
+
+        <!-- 容易混淆的AWS用語區域 -->
+        <div id="confusing-section" class="content-section">
+            <div class="grid">
+                <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-header">
+                    <span class="card-icon">🤔</span>
+                    <h2 class="card-title">容易混淆的AWS用語詳解</h2>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+
+                    <!-- Stop vs Terminate -->
+                    <div class="confusing-item">
+                        <h3 style="color: #e74c3c; border-bottom: 2px solid #e74c3c; padding-bottom: 10px; margin-bottom: 15px;">
+                            🛑 Stop vs Terminate (停止 vs 終止)
+                        </h3>
+                        <div class="confusing-content">
+                            <div class="term-explanation">
+                                <h4 style="color: #27ae60;">✅ Stop (停止)</h4>
+                                <ul style="margin: 10px 0; padding-left: 20px;">
+                                    <li><strong>作用：</strong>暫停EC2實例運行</li>
+                                    <li><strong>數據：</strong>EBS卷數據保留</li>
+                                    <li><strong>重啟：</strong>可以重新啟動</li>
+                                    <li><strong>計費：</strong>停止期間不收取實例費用</li>
+                                    <li><strong>IP地址：</strong>公共IP會改變</li>
+                                </ul>
+                            </div>
+                            <div class="term-explanation">
+                                <h4 style="color: #e74c3c;">⚠️ Terminate (終止)</h4>
+                                <ul style="margin: 10px 0; padding-left: 20px;">
+                                    <li><strong>作用：</strong>永久刪除EC2實例</li>
+                                    <li><strong>數據：</strong>實例存儲數據丟失</li>
+                                    <li><strong>重啟：</strong>無法重新啟動</li>
+                                    <li><strong>計費：</strong>停止所有計費</li>
+                                    <li><strong>恢復：</strong>無法恢復，需重新創建</li>
+                                </ul>
+                            </div>
+                            <div class="warning-box" style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 10px; border-radius: 5px; margin-top: 10px;">
+                                <strong>⚠️ 重要提醒：</strong>Terminate是不可逆操作，執行前請確認！
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- EBS vs Instance Store -->
+                    <div class="confusing-item">
+                        <h3 style="color: #3498db; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-bottom: 15px;">
+                            💾 EBS vs Instance Store (彈性塊存儲 vs 實例存儲)
+                        </h3>
+                        <div class="confusing-content">
+                            <div class="term-explanation">
+                                <h4 style="color: #27ae60;">✅ EBS (Elastic Block Store)</h4>
+                                <ul style="margin: 10px 0; padding-left: 20px;">
+                                    <li><strong>位置：</strong>網絡附加存儲</li>
+                                    <li><strong>持久性：</strong>實例停止後數據保留</li>
+                                    <li><strong>性能：</strong>網絡延遲，但可配置IOPS</li>
+                                    <li><strong>備份：</strong>支持快照備份</li>
+                                    <li><strong>大小：</strong>可動態調整</li>
+                                </ul>
+                            </div>
+                            <div class="term-explanation">
+                                <h4 style="color: #f39c12;">⚡ Instance Store</h4>
+                                <ul style="margin: 10px 0; padding-left: 20px;">
+                                    <li><strong>位置：</strong>物理附加到主機</li>
+                                    <li><strong>持久性：</strong>實例停止後數據丟失</li>
+                                    <li><strong>性能：</strong>非常高的I/O性能</li>
+                                    <li><strong>備份：</strong>需要手動備份</li>
+                                    <li><strong>大小：</strong>固定大小，無法調整</li>
+                                </ul>
+                            </div>
+                            <div class="tip-box" style="background: #d4edda; border: 1px solid #c3e6cb; padding: 10px; border-radius: 5px; margin-top: 10px;">
+                                <strong>💡 使用建議：</strong>數據庫用EBS，臨時處理用Instance Store
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Public IP vs Elastic IP -->
+                    <div class="confusing-item">
+                        <h3 style="color: #9b59b6; border-bottom: 2px solid #9b59b6; padding-bottom: 10px; margin-bottom: 15px;">
+                            🌐 Public IP vs Elastic IP (公共IP vs 彈性IP)
+                        </h3>
+                        <div class="confusing-content">
+                            <div class="term-explanation">
+                                <h4 style="color: #f39c12;">🔄 Public IP (公共IP)</h4>
+                                <ul style="margin: 10px 0; padding-left: 20px;">
+                                    <li><strong>分配：</strong>AWS自動分配</li>
+                                    <li><strong>穩定性：</strong>實例重啟後會改變</li>
+                                    <li><strong>費用：</strong>免費</li>
+                                    <li><strong>控制：</strong>無法手動管理</li>
+                                    <li><strong>適用：</strong>臨時或測試環境</li>
+                                </ul>
+                            </div>
+                            <div class="term-explanation">
+                                <h4 style="color: #27ae60;">📌 Elastic IP (彈性IP)</h4>
+                                <ul style="margin: 10px 0; padding-left: 20px;">
+                                    <li><strong>分配：</strong>用戶申請和管理</li>
+                                    <li><strong>穩定性：</strong>固定不變，可重新分配</li>
+                                    <li><strong>費用：</strong>未使用時收費</li>
+                                    <li><strong>控制：</strong>完全控制</li>
+                                    <li><strong>適用：</strong>生產環境，需要固定IP</li>
+                                </ul>
+                            </div>
+                            <div class="warning-box" style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 10px; border-radius: 5px; margin-top: 10px;">
+                                <strong>💰 費用提醒：</strong>未附加到實例的Elastic IP會產生費用！
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Group vs NACL -->
+                    <div class="confusing-item">
+                        <h3 style="color: #e67e22; border-bottom: 2px solid #e67e22; padding-bottom: 10px; margin-bottom: 15px;">
+                            🛡️ Security Group vs NACL (安全組 vs 網絡ACL)
+                        </h3>
+                        <div class="confusing-content">
+                            <div class="term-explanation">
+                                <h4 style="color: #27ae60;">🔒 Security Group (安全組)</h4>
+                                <ul style="margin: 10px 0; padding-left: 20px;">
+                                    <li><strong>層級：</strong>實例級別防火牆</li>
+                                    <li><strong>規則：</strong>只支持允許規則</li>
+                                    <li><strong>狀態：</strong>有狀態（自動允許返回流量）</li>
+                                    <li><strong>評估：</strong>所有規則都會評估</li>
+                                    <li><strong>適用：</strong>精細的實例保護</li>
+                                </ul>
+                            </div>
+                            <div class="term-explanation">
+                                <h4 style="color: #e74c3c;">🚫 NACL (Network ACL)</h4>
+                                <ul style="margin: 10px 0; padding-left: 20px;">
+                                    <li><strong>層級：</strong>子網級別防火牆</li>
+                                    <li><strong>規則：</strong>支持允許和拒絕規則</li>
+                                    <li><strong>狀態：</strong>無狀態（需要明確允許返回流量）</li>
+                                    <li><strong>評估：</strong>按規則編號順序評估</li>
+                                    <li><strong>適用：</strong>子網級別的粗粒度控制</li>
+                                </ul>
+                            </div>
+                            <div class="tip-box" style="background: #d4edda; border: 1px solid #c3e6cb; padding: 10px; border-radius: 5px; margin-top: 10px;">
+                                <strong>🎯 最佳實踐：</strong>Security Group做主要控制，NACL做額外防護
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Snapshot vs AMI vs Backup -->
+                    <div class="confusing-item">
+                        <h3 style="color: #16a085; border-bottom: 2px solid #16a085; padding-bottom: 10px; margin-bottom: 15px;">
+                            📸 Snapshot vs AMI vs Backup (快照 vs 鏡像 vs 備份)
+                        </h3>
+                        <div class="confusing-content">
+                            <div class="term-explanation">
+                                <h4 style="color: #3498db;">📷 Snapshot (快照)</h4>
+                                <ul style="margin: 10px 0; padding-left: 20px;">
+                                    <li><strong>對象：</strong>EBS卷的時點備份</li>
+                                    <li><strong>內容：</strong>只包含數據，不包含配置</li>
+                                    <li><strong>用途：</strong>數據備份和恢復</li>
+                                    <li><strong>啟動：</strong>不能直接啟動實例</li>
+                                </ul>
+                            </div>
+                            <div class="term-explanation">
+                                <h4 style="color: #e74c3c;">💿 AMI (Amazon Machine Image)</h4>
+                                <ul style="margin: 10px 0; padding-left: 20px;">
+                                    <li><strong>對象：</strong>完整的實例模板</li>
+                                    <li><strong>內容：</strong>操作系統+應用+配置</li>
+                                    <li><strong>用途：</strong>創建新實例</li>
+                                    <li><strong>啟動：</strong>可以直接啟動實例</li>
+                                </ul>
+                            </div>
+                            <div class="term-explanation">
+                                <h4 style="color: #f39c12;">🗄️ AWS Backup</h4>
+                                <ul style="margin: 10px 0; padding-left: 20px;">
+                                    <li><strong>對象：</strong>多種AWS資源的統一備份</li>
+                                    <li><strong>內容：</strong>跨服務的備份管理</li>
+                                    <li><strong>用途：</strong>集中化備份策略</li>
+                                    <li><strong>功能：</strong>自動化備份和恢復</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- On-Demand vs Reserved vs Spot -->
+                    <div class="confusing-item">
+                        <h3 style="color: #8e44ad; border-bottom: 2px solid #8e44ad; padding-bottom: 10px; margin-bottom: 15px;">
+                            💰 On-Demand vs Reserved vs Spot (按需 vs 預留 vs 競價)
+                        </h3>
+                        <div class="confusing-content">
+                            <div class="term-explanation">
+                                <h4 style="color: #e74c3c;">💸 On-Demand (按需實例)</h4>
+                                <ul style="margin: 10px 0; padding-left: 20px;">
+                                    <li><strong>價格：</strong>最貴，按小時計費</li>
+                                    <li><strong>承諾：</strong>無需長期承諾</li>
+                                    <li><strong>可用性：</strong>隨時可用</li>
+                                    <li><strong>適用：</strong>短期、不可預測的工作負載</li>
+                                </ul>
+                            </div>
+                            <div class="term-explanation">
+                                <h4 style="color: #27ae60;">💎 Reserved (預留實例)</h4>
+                                <ul style="margin: 10px 0; padding-left: 20px;">
+                                    <li><strong>價格：</strong>最多可節省75%</li>
+                                    <li><strong>承諾：</strong>1年或3年期承諾</li>
+                                    <li><strong>可用性：</strong>保證容量</li>
+                                    <li><strong>適用：</strong>穩定的長期工作負載</li>
+                                </ul>
+                            </div>
+                            <div class="term-explanation">
+                                <h4 style="color: #f39c12;">⚡ Spot (競價實例)</h4>
+                                <ul style="margin: 10px 0; padding-left: 20px;">
+                                    <li><strong>價格：</strong>最多可節省90%</li>
+                                    <li><strong>承諾：</strong>無承諾，但可能被中斷</li>
+                                    <li><strong>可用性：</strong>取決於AWS容量</li>
+                                    <li><strong>適用：</strong>容錯的批處理工作負載</li>
+                                </ul>
+                            </div>
+                            <div class="warning-box" style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 10px; border-radius: 5px; margin-top: 10px;">
+                                <strong>⚠️ 注意：</strong>Spot實例可能隨時被AWS回收，需要做好容錯處理！
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single-AZ vs Multi-AZ -->
+                    <div class="confusing-item">
+                        <h3 style="color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 10px; margin-bottom: 15px;">
+                            🏢 Single-AZ vs Multi-AZ (單可用區 vs 多可用區)
+                        </h3>
+                        <div class="confusing-content">
+                            <div class="term-explanation">
+                                <h4 style="color: #f39c12;">🏠 Single-AZ (單可用區)</h4>
+                                <ul style="margin: 10px 0; padding-left: 20px;">
+                                    <li><strong>部署：</strong>資源部署在單個可用區</li>
+                                    <li><strong>成本：</strong>較低</li>
+                                    <li><strong>可用性：</strong>可用區故障時服務中斷</li>
+                                    <li><strong>適用：</strong>開發測試環境</li>
+                                </ul>
+                            </div>
+                            <div class="term-explanation">
+                                <h4 style="color: #27ae60;">🏢 Multi-AZ (多可用區)</h4>
+                                <ul style="margin: 10px 0; padding-left: 20px;">
+                                    <li><strong>部署：</strong>資源跨多個可用區</li>
+                                    <li><strong>成本：</strong>較高</li>
+                                    <li><strong>可用性：</strong>高可用性，自動故障轉移</li>
+                                    <li><strong>適用：</strong>生產環境</li>
+                                </ul>
+                            </div>
+                            <div class="tip-box" style="background: #d4edda; border: 1px solid #c3e6cb; padding: 10px; border-radius: 5px; margin-top: 10px;">
+                                <strong>🎯 建議：</strong>生產環境務必使用Multi-AZ部署確保高可用性
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- IAM User vs Role vs Group -->
+                    <div class="confusing-item">
+                        <h3 style="color: #d35400; border-bottom: 2px solid #d35400; padding-bottom: 10px; margin-bottom: 15px;">
+                            👥 IAM User vs Role vs Group (用戶 vs 角色 vs 組)
+                        </h3>
+                        <div class="confusing-content">
+                            <div class="term-explanation">
+                                <h4 style="color: #3498db;">👤 IAM User (IAM用戶)</h4>
+                                <ul style="margin: 10px 0; padding-left: 20px;">
+                                    <li><strong>身份：</strong>代表個人或應用</li>
+                                    <li><strong>憑證：</strong>有永久的訪問密鑰</li>
+                                    <li><strong>權限：</strong>直接附加策略</li>
+                                    <li><strong>適用：</strong>長期訪問AWS資源</li>
+                                </ul>
+                            </div>
+                            <div class="term-explanation">
+                                <h4 style="color: #e74c3c;">🎭 IAM Role (IAM角色)</h4>
+                                <ul style="margin: 10px 0; padding-left: 20px;">
+                                    <li><strong>身份：</strong>可被假設的身份</li>
+                                    <li><strong>憑證：</strong>臨時安全憑證</li>
+                                    <li><strong>權限：</strong>附加策略，可被信任實體假設</li>
+                                    <li><strong>適用：</strong>跨服務訪問，臨時權限</li>
+                                </ul>
+                            </div>
+                            <div class="term-explanation">
+                                <h4 style="color: #27ae60;">👥 IAM Group (IAM組)</h4>
+                                <ul style="margin: 10px 0; padding-left: 20px;">
+                                    <li><strong>身份：</strong>用戶的集合</li>
+                                    <li><strong>憑證：</strong>組本身沒有憑證</li>
+                                    <li><strong>權限：</strong>組內用戶繼承組的策略</li>
+                                    <li><strong>適用：</strong>批量管理用戶權限</li>
+                                </ul>
+                            </div>
+                            <div class="tip-box" style="background: #d4edda; border: 1px solid #c3e6cb; padding: 10px; border-radius: 5px; margin-top: 10px;">
+                                <strong>🔐 最佳實踐：</strong>EC2使用Role，人員使用User，批量管理用Group
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+    <script>
+        // 導航功能
+        function showSection(sectionName) {
+            // 隱藏所有內容區域
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // 移除所有按鈕的active類
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // 顯示選中的內容區域
+            const targetSection = document.getElementById(sectionName + '-section');
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+
+            // 激活對應的按鈕
+            const targetBtn = document.getElementById(
+                sectionName === 'vocabulary' ? 'vocab-btn' :
+                sectionName === 'complete' ? 'complete-btn' : 'conf-btn'
+            );
+            if (targetBtn) {
+                targetBtn.classList.add('active');
+            }
+        }
+
+        // 搜索功能
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const wordItems = document.querySelectorAll('.word-item');
+            const confusingItems = document.querySelectorAll('.confusing-item');
+            let visibleCount = 0;
+
+            // 搜索詞彙項目
+            wordItems.forEach(item => {
+                const english = item.querySelector('.word-english').textContent.toLowerCase();
+                const chinese = item.querySelector('.word-chinese').textContent.toLowerCase();
+                const consequence = item.querySelector('.word-consequence').textContent.toLowerCase();
+
+                if (english.includes(searchTerm) || chinese.includes(searchTerm) || consequence.includes(searchTerm)) {
+                    item.style.display = 'flex';
+                    item.style.backgroundColor = searchTerm ? '#fff3cd' : '';
+                    visibleCount++;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            // 搜索混淆用語項目
+            confusingItems.forEach(item => {
+                const content = item.textContent.toLowerCase();
+                if (content.includes(searchTerm)) {
+                    item.style.display = 'block';
+                    if (searchTerm) {
+                        item.style.backgroundColor = '#fff3cd';
+                        item.style.border = '2px solid #ffc107';
+                    } else {
+                        item.style.backgroundColor = '';
+                        item.style.border = '';
+                    }
+                    visibleCount++;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            // 顯示搜索結果統計
+            const searchBox = document.querySelector('.search-box');
+            let resultInfo = searchBox.querySelector('.search-result-info');
+
+            if (searchTerm) {
+                if (!resultInfo) {
+                    resultInfo = document.createElement('div');
+                    resultInfo.className = 'search-result-info';
+                    resultInfo.style.cssText = `
+                        margin-top: 10px;
+                        padding: 8px 12px;
+                        background: #e3f2fd;
+                        border-radius: 5px;
+                        font-size: 14px;
+                        color: #1976d2;
+                    `;
+                    searchBox.appendChild(resultInfo);
+                }
+                resultInfo.textContent = `找到 ${visibleCount} 個相關項目`;
+            } else if (resultInfo) {
+                resultInfo.remove();
+                // 重置所有項目的樣式
+                confusingItems.forEach(item => {
+                    item.style.display = 'block';
+                    item.style.backgroundColor = '';
+                    item.style.border = '';
+                });
+            }
+        });
+
+        // 點擊單詞項目時的效果
+        document.querySelectorAll('.word-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const english = this.querySelector('.word-english').textContent;
+                const chinese = this.querySelector('.word-chinese').textContent;
+
+                // 創建臨時提示
+                const tooltip = document.createElement('div');
+                tooltip.textContent = `已複製: ${english} (${chinese})`;
+                tooltip.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: #333;
+                    color: white;
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                    z-index: 1000;
+                    animation: fadeInOut 2s ease-in-out;
+                `;
+
+                document.body.appendChild(tooltip);
+
+                // 複製到剪貼板
+                navigator.clipboard.writeText(english).catch(() => {
+                    console.log('無法複製到剪貼板');
+                });
+
+                // 2秒後移除提示
+                setTimeout(() => {
+                    document.body.removeChild(tooltip);
+                }, 2000);
+            });
+        });
+
+        // 添加淡入淡出動畫
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInOut {
+                0% { opacity: 0; transform: translateY(-10px); }
+                20% { opacity: 1; transform: translateY(0); }
+                80% { opacity: 1; transform: translateY(0); }
+                100% { opacity: 0; transform: translateY(-10px); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
