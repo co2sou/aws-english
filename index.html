@@ -11,11 +11,158 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --body-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --background-color: #f4f7f6; /* General background for elements like search box */
+            --text-color: #333;
+            --secondary-text-color: #7f8c8d;
+            --card-background: #ffffff;
+            --border-color: #e0e0e0;
+            --header-text-color: #ffffff;
+            --link-color: #3498db;
+            --hover-background: #f8f9fa;
+
+            /* Safety Alerts */
+            --safety-alerts-background: linear-gradient(135deg, #ff8c00, #ffa500, #ff7f00);
+            --safety-alerts-text-color: #ffffff;
+            --safety-alerts-border: #ff6600;
+            --safety-alerts-before-background: linear-gradient(45deg, #ff6600, #ff8c00, #ff6600, #ff4500);
+            --safety-alerts-after-background: linear-gradient(90deg, #ffffff, transparent);
+            --safety-alerts-li-background: rgba(255,255,255,0.1);
+            --safety-alerts-li-border: #ffcc00;
+            --safety-alerts-li-before-background: #ffcc00;
+            --safety-alerts-li-before-color: #ff6600;
+            --safety-alerts-li-hover-background: rgba(255,255,255,0.2);
+            --safety-alerts-li-hover-border: #ffdd44;
+
+            /* Navigation Buttons */
+            --nav-btn-background: #f8f9fa;
+            --nav-btn-border: #dee2e6;
+            --nav-btn-text: #495057;
+            --nav-btn-hover-background: #e9ecef;
+            --nav-btn-active-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --nav-btn-active-text: white;
+            --nav-btn-active-border: #667eea;
+
+            /* Confusing Items */
+            --term-explanation-background: #f8f9fa;
+            --term-explanation-border: #3498db;
+            --warning-box-background: #fff3cd;
+            --warning-box-border: #ffeaa7;
+            --tip-box-background: #d4edda;
+            --tip-box-border: #c3e6cb;
+
+            /* Word Item Colors */
+            --danger-color: #e74c3c;
+            --safe-color: #27ae60;
+            --warning-color: #f39c12;
+            --info-color: #3498db;
+
+            --danger-bg: #fee;
+            --danger-border: #e74c3c;
+            --safe-bg: #efe;
+            --safe-border: #27ae60;
+            --warning-bg: #fff3cd;
+            --warning-border: #f39c12;
+            --info-bg: #e3f2fd;
+            --info-border: #3498db;
+
+            /* Tips Section */
+            --tips-background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            --tips-text: white;
+
+            /* Search Input */
+            --search-input-border: #ddd;
+            --search-input-focus-border: #667eea;
+            --search-result-info-background: #e3f2fd;
+            --search-result-info-color: #1976d2;
+            --search-highlight-background: #fff3cd;
+            --search-highlight-border: #ffc107;
+
+            /* Dark mode toggle button */
+            --button-background: #2193b0;
+            --button-text: #ffffff;
+        }
+
+        body.dark-mode {
+            --body-background: #2c3e50; /* Solid dark background for body */
+            --background-color: #34495e;
+            --text-color: #ecf0f1;
+            --secondary-text-color: #bdc3c7;
+            --card-background: #34495e;
+            --border-color: #4a627a;
+            --header-text-color: #ecf0f1;
+            --link-color: #1abc9c;
+            --hover-background: #4a627a;
+
+            /* Safety Alerts - Dark Mode Adjustments */
+            --safety-alerts-background: linear-gradient(135deg, #a0522d, #8b4513, #69330a); /* Darker orange */
+            --safety-alerts-text-color: #ecf0f1;
+            --safety-alerts-border: #8b4513;
+            --safety-alerts-before-background: linear-gradient(45deg, #8b4513, #a0522d, #8b4513, #69330a);
+            --safety-alerts-after-background: linear-gradient(90deg, #bdc3c7, transparent);
+            --safety-alerts-li-background: rgba(255,255,255,0.05);
+            --safety-alerts-li-border: #a0522d;
+            --safety-alerts-li-before-background: #a0522d;
+            --safety-alerts-li-before-color: #ecf0f1;
+            --safety-alerts-li-hover-background: rgba(255,255,255,0.1);
+            --safety-alerts-li-hover-border: #d35400;
+
+            /* Navigation Buttons - Dark Mode Adjustments */
+            --nav-btn-background: #4a627a;
+            --nav-btn-border: #5a708b;
+            --nav-btn-text: #ecf0f1;
+            --nav-btn-hover-background: #5a708b;
+            --nav-btn-active-background: linear-gradient(135deg, #1abc9c, #16a085);
+            --nav-btn-active-text: white;
+            --nav-btn-active-border: #16a085;
+
+            /* Confusing Items - Dark Mode Adjustments */
+            --term-explanation-background: #4a627a;
+            --term-explanation-border: #1abc9c;
+            --warning-box-background: #5a708b;
+            --warning-box-border: #d35400;
+            --tip-box-background: #16a085;
+            --tip-box-border: #1abc9c;
+
+            /* Word Item Colors - Dark Mode Adjustments */
+            --danger-color: #e74c3c; /* Keep red */
+            --safe-color: #2ecc71; /* Keep green */
+            --warning-color: #f39c12; /* Keep orange */
+            --info-color: #1abc9c; /* Adjust info color */
+
+            --danger-bg: #4a2a2a;
+            --danger-border: #e74c3c;
+            --safe-bg: #2a4a2a;
+            --safe-border: #2ecc71;
+            --warning-bg: #4a4a2a;
+            --warning-border: #f39c12;
+            --info-bg: #2a3a4a;
+            --info-border: #1abc9c;
+
+            /* Tips Section - Dark Mode Adjustments */
+            --tips-background: linear-gradient(135deg, #8b4513, #a0522d);
+            --tips-text: #ecf0f1;
+
+            /* Search Input - Dark Mode Adjustments */
+            --search-input-border: #5a708b;
+            --search-input-focus-border: #1abc9c;
+            --search-result-info-background: #4a627a;
+            --search-result-info-color: #1abc9c;
+            --search-highlight-background: #4a4a2a;
+            --search-highlight-border: #f39c12;
+
+            /* Dark mode toggle button */
+            --button-background: #1abc9c;
+            --button-text: #ffffff;
+        }
+
+        /* General styles using variables */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text-color);
+            background: var(--body-background);
             min-height: 100vh;
         }
 
@@ -25,9 +172,18 @@
             padding: 20px;
         }
 
+        .nav-menu-container {
+            background: var(--card-background);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
         .header {
             text-align: center;
-            color: white;
+            color: var(--header-text-color);
             margin-bottom: 30px;
         }
 
@@ -50,7 +206,7 @@
         }
 
         .info-box {
-            background: white;
+            background: var(--card-background);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -59,7 +215,7 @@
 
         .info-box h3 {
             margin-bottom: 15px;
-            color: #2c3e50;
+            color: var(--text-color);
             font-size: 1.2rem;
         }
 
@@ -74,23 +230,24 @@
         }
 
         .info-box a {
-            color: #3498db;
+            color: var(--link-color);
             text-decoration: none;
             display: block;
             padding: 5px 0;
-            border-bottom: 1px solid #ecf0f1;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .info-box a:hover {
-            background-color: #f8f9fa;
+            background-color: var(--hover-background);
             padding-left: 10px;
             transition: all 0.3s;
         }
 
+        /* Safety Alerts - using variables */
         .safety-alerts {
-            background: linear-gradient(135deg, #ff8c00, #ffa500, #ff7f00) !important;
-            color: #ffffff !important;
-            border: 4px solid #ff6600 !important;
+            background: var(--safety-alerts-background) !important;
+            color: var(--safety-alerts-text-color) !important;
+            border: 4px solid var(--safety-alerts-border) !important;
             box-shadow:
                 inset 0 0 20px rgba(0,0,0,0.2),
                 0 8px 25px rgba(255, 140, 0, 0.4),
@@ -110,7 +267,7 @@
             left: -4px;
             right: -4px;
             bottom: -4px;
-            background: linear-gradient(45deg, #ff6600, #ff8c00, #ff6600, #ff4500);
+            background: var(--safety-alerts-before-background);
             border-radius: 13px;
             z-index: -1;
             animation: orange-frame-shine 4s linear infinite;
@@ -132,7 +289,7 @@
         }
 
         .safety-alerts h3 {
-            color: #ffffff !important;
+            color: var(--safety-alerts-text-color) !important;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
             font-size: 1.4rem !important;
             margin-bottom: 20px !important;
@@ -156,18 +313,18 @@
             content: '';
             flex: 1;
             height: 2px;
-            background: linear-gradient(90deg, #ffffff, transparent);
+            background: var(--safety-alerts-after-background);
             margin-left: 10px;
         }
 
         .safety-alerts li {
-            color: #ffffff !important;
+            color: var(--safety-alerts-text-color) !important;
             font-weight: 500 !important;
             font-size: 0.95rem !important;
             padding: 10px 15px !important;
             margin: 5px 0 !important;
-            background: rgba(255,255,255,0.1) !important;
-            border-left: 3px solid #ffcc00 !important;
+            background: var(--safety-alerts-li-background) !important;
+            border-left: 3px solid var(--safety-alerts-li-border) !important;
             border-radius: 0 8px 8px 0 !important;
             transition: all 0.3s ease !important;
             font-family: 'Courier New', monospace !important;
@@ -181,8 +338,8 @@
             left: -8px;
             top: 50%;
             transform: translateY(-50%);
-            background: #ffcc00;
-            color: #ff6600;
+            background: var(--safety-alerts-li-before-background);
+            color: var(--safety-alerts-li-before-color);
             width: 16px;
             height: 16px;
             border-radius: 50%;
@@ -194,14 +351,14 @@
         }
 
         .safety-alerts li:hover {
-            background: rgba(255,255,255,0.2) !important;
-            border-left-color: #ffdd44 !important;
+            background: var(--safety-alerts-li-hover-background) !important;
+            border-left-color: var(--safety-alerts-li-hover-border) !important;
             transform: translateX(5px) !important;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
         }
 
         .safety-alerts li:hover::before {
-            background: #ffdd44;
+            background: var(--safety-alerts-li-hover-border); /* Use hover border color for consistency */
             transform: translateY(-50%) scale(1.2);
         }
 
@@ -252,11 +409,10 @@
             50% { transform: rotateY(15deg); }
         }
 
-
-
+        /* Navigation Buttons - using variables */
         .nav-btn {
-            background: #f8f9fa;
-            border: 2px solid #dee2e6;
+            background: var(--nav-btn-background);
+            border: 2px solid var(--nav-btn-border);
             padding: 12px 24px;
             margin: 0 10px;
             border-radius: 25px;
@@ -264,19 +420,19 @@
             font-size: 1rem;
             font-weight: 500;
             transition: all 0.3s ease;
-            color: #495057;
+            color: var(--nav-btn-text);
         }
 
         .nav-btn:hover {
-            background: #e9ecef;
+            background: var(--nav-btn-hover-background);
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .nav-btn.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-color: #667eea;
+            background: var(--nav-btn-active-background);
+            color: var(--nav-btn-active-text);
+            border-color: var(--nav-btn-active-border);
             box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
         }
 
@@ -288,8 +444,9 @@
             display: block;
         }
 
+        /* Confusing Items - using variables */
         .confusing-item {
-            background: white;
+            background: var(--card-background);
             border-radius: 15px;
             padding: 25px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
@@ -308,16 +465,39 @@
         }
 
         .term-explanation {
-            background: #f8f9fa;
+            background: var(--term-explanation-background);
             padding: 15px;
             border-radius: 8px;
-            border-left: 4px solid #3498db;
+            border-left: 4px solid var(--term-explanation-border);
         }
 
         .term-explanation h4 {
             margin: 0 0 10px 0;
             font-size: 1.1rem;
+            /* Default color, will be overridden by specific classes */
+            color: var(--text-color);
         }
+
+        /* Specific h4 colors for confusing items */
+        .confusing-title {
+            border-bottom: 2px solid currentColor; /* Use currentColor to match text color */
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .confusing-title.danger-color { color: var(--danger-color); }
+        .confusing-title.info-color { color: var(--info-color); }
+        .confusing-title.link-color { color: var(--link-color); }
+        .confusing-title.warning-color { color: var(--warning-color); }
+        .confusing-title.safe-color { color: var(--safe-color); }
+        .confusing-title.text-color { color: var(--text-color); }
+
+        /* Specific h4 colors for confusing items */
+        .term-explanation h4.safe-color { color: var(--safe-color); }
+        .term-explanation h4.danger-color { color: var(--danger-color); }
+        .term-explanation h4.warning-color { color: var(--warning-color); }
+        .term-explanation h4.info-color { color: var(--info-color); }
+
 
         .term-explanation ul {
             margin: 0;
@@ -335,8 +515,25 @@
             font-size: 0.9rem;
         }
 
+        .warning-box {
+            background: var(--warning-box-background);
+            border: 1px solid var(--warning-box-border);
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .tip-box {
+            background: var(--tip-box-background);
+            border: 1px solid var(--tip-box-border);
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        /* Search Box - using variables */
         .search-box {
-            background: white;
+            background: var(--card-background);
             padding: 15px;
             border-radius: 10px;
             margin-bottom: 20px;
@@ -346,7 +543,7 @@
         .search-box input {
             width: 100%;
             padding: 12px;
-            border: 2px solid #ddd;
+            border: 2px solid var(--search-input-border);
             border-radius: 8px;
             font-size: 16px;
             transition: border-color 0.3s;
@@ -354,7 +551,12 @@
 
         .search-box input:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: var(--search-input-focus-border);
+        }
+
+        .search-result-info {
+            background: var(--search-result-info-background) !important;
+            color: var(--search-result-info-color) !important;
         }
 
         .grid {
@@ -363,8 +565,9 @@
             gap: 20px;
         }
 
+        /* Card and Word Items - using variables */
         .card {
-            background: white;
+            background: var(--card-background);
             border-radius: 15px;
             padding: 25px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
@@ -390,7 +593,7 @@
         .card-title {
             font-size: 1.4rem;
             font-weight: bold;
-            color: #333;
+            color: var(--text-color);
         }
 
         .word-item {
@@ -404,35 +607,37 @@
         }
 
         .word-item:hover {
-            background-color: #f8f9fa;
+            background-color: var(--hover-background);
         }
 
         .word-english {
             font-weight: bold;
-            color: #2c3e50;
+            color: var(--text-color);
             font-size: 1.1rem;
         }
 
         .word-chinese {
-            color: #7f8c8d;
+            color: var(--secondary-text-color);
             margin-left: 10px;
         }
 
         .word-consequence {
             font-size: 0.9rem;
-            color: #666;
+            color: var(--secondary-text-color);
             max-width: 200px;
             text-align: right;
         }
 
-        .danger { background-color: #fee; border-left: 4px solid #e74c3c; }
-        .safe { background-color: #efe; border-left: 4px solid #27ae60; }
-        .warning { background-color: #fff3cd; border-left: 4px solid #f39c12; }
-        .info { background-color: #e3f2fd; border-left: 4px solid #3498db; }
+        /* Word Item specific colors */
+        .word-item.danger { background-color: var(--danger-bg); border-left: 4px solid var(--danger-border); }
+        .word-item.safe { background-color: var(--safe-bg); border-left: 4px solid var(--safe-border); }
+        .word-item.warning { background-color: var(--warning-bg); border-left: 4px solid var(--warning-border); }
+        .word-item.info { background-color: var(--info-bg); border-left: 4px solid var(--info-border); }
 
+        /* Tips Section - using variables */
         .tips {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-            color: white;
+            background: var(--tips-background);
+            color: var(--tips-text);
             padding: 20px;
             border-radius: 15px;
             margin-top: 20px;
@@ -442,6 +647,7 @@
         .tips h3 {
             margin-bottom: 15px;
             font-size: 1.3rem;
+            color: var(--tips-text);
         }
 
         .tips ul {
@@ -458,6 +664,11 @@
             content: "⚠️";
             position: absolute;
             left: 0;
+        }
+
+        /* Remove inline styles for h4 in word-list */
+        .word-list h4 {
+            color: var(--text-color) !important; /* Override inline styles */
         }
 
         @media (max-width: 768px) {
@@ -483,6 +694,21 @@
                 max-width: 100%;
                 margin-top: 5px;
             }
+        }
+
+        /* Dark mode toggle button styling */
+        #darkModeToggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--button-background);
+            color: var(--button-text);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            z-index: 1000;
         }
     </style>
 </head>
@@ -523,7 +749,7 @@
         </div>
 
         <!-- 導航菜單 -->
-        <div style="background: white; padding: 15px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+        <div class="nav-menu-container">
             <button onclick="showSection('vocabulary')" class="nav-btn active" id="vocab-btn">📚 基礎詞彙</button>
             <button onclick="showSection('complete')" class="nav-btn" id="complete-btn">📖 完整詞彙表</button>
             <button onclick="showSection('confusing')" class="nav-btn" id="conf-btn">🤔 容易混淆的AWS用語</button>
@@ -1056,7 +1282,7 @@
                 </div>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
                     <div class="word-list">
-                        <h4 style="color: #2c3e50; margin-bottom: 10px;">🔐 安全與身份</h4>
+                        <h4>🔐 安全與身份</h4>
                         <div class="word-item info">
                             <div><span class="word-english">IAM</span><span class="word-chinese">身份訪問管理</span></div>
                             <div class="word-consequence">用戶權限控制</div>
@@ -1120,7 +1346,7 @@
                     </div>
 
                     <div class="word-list">
-                        <h4 style="color: #2c3e50; margin-bottom: 10px;">📊 分析與機器學習</h4>
+                        <h4>📊 分析與機器學習</h4>
                         <div class="word-item info">
                             <div><span class="word-english">SageMaker</span><span class="word-chinese">機器學習平台</span></div>
                             <div class="word-consequence">ML模型開發</div>
@@ -1188,7 +1414,7 @@
                     </div>
 
                     <div class="word-list">
-                        <h4 style="color: #2c3e50; margin-bottom: 10px;">🔄 集成與消息</h4>
+                        <h4>🔄 集成與消息</h4>
                         <div class="word-item info">
                             <div><span class="word-english">SQS</span><span class="word-chinese">簡單隊列服務</span></div>
                             <div class="word-consequence">消息隊列</div>
@@ -1240,7 +1466,7 @@
                     </div>
 
                     <div class="word-list">
-                        <h4 style="color: #2c3e50; margin-bottom: 10px;">🏗️ 容器與微服務</h4>
+                        <h4>🏗️ 容器與微服務</h4>
                         <div class="word-item info">
                             <div><span class="word-english">ECS</span><span class="word-chinese">彈性容器服務</span></div>
                             <div class="word-consequence">Docker容器管理</div>
@@ -1292,7 +1518,7 @@
                     </div>
 
                     <div class="word-list">
-                        <h4 style="color: #2c3e50; margin-bottom: 10px;">💾 存儲進階</h4>
+                        <h4>💾 存儲進階</h4>
                         <div class="word-item info">
                             <div><span class="word-english">Storage Gateway</span><span class="word-chinese">存儲網關</span></div>
                             <div class="word-consequence">混合雲存儲</div>
@@ -1328,7 +1554,7 @@
                     </div>
 
                     <div class="word-list">
-                        <h4 style="color: #2c3e50; margin-bottom: 10px;">🌐 網絡進階</h4>
+                        <h4>🌐 網絡進階</h4>
                         <div class="word-item info">
                             <div><span class="word-english">Direct Connect</span><span class="word-chinese">專線連接</span></div>
                             <div class="word-consequence">專用網絡連接</div>
@@ -1364,7 +1590,7 @@
                     </div>
 
                     <div class="word-list">
-                        <h4 style="color: #2c3e50; margin-bottom: 10px;">🗄️ 數據庫進階</h4>
+                        <h4>🗄️ 數據庫進階</h4>
                         <div class="word-item info">
                             <div><span class="word-english">DocumentDB</span><span class="word-chinese">文檔數據庫</span></div>
                             <div class="word-consequence">MongoDB兼容</div>
@@ -1400,7 +1626,7 @@
                     </div>
 
                     <div class="word-list">
-                        <h4 style="color: #2c3e50; margin-bottom: 10px;">🛠️ 開發運維進階</h4>
+                        <h4>🛠️ 開發運維進階</h4>
                         <div class="word-item info">
                             <div><span class="word-english">Cloud9</span><span class="word-chinese">雲端IDE</span></div>
                             <div class="word-consequence">在線開發環境</div>
@@ -1436,7 +1662,7 @@
                     </div>
 
                     <div class="word-list">
-                        <h4 style="color: #2c3e50; margin-bottom: 10px;">📱 移動與前端</h4>
+                        <h4>📱 移動與前端</h4>
                         <div class="word-item info">
                             <div><span class="word-english">Amplify</span><span class="word-chinese">全棧開發平台</span></div>
                             <div class="word-consequence">前端後端一體化</div>
@@ -1472,7 +1698,7 @@
                     </div>
 
                     <div class="word-list">
-                        <h4 style="color: #2c3e50; margin-bottom: 10px;">🎮 媒體與遊戲</h4>
+                        <h4>🎮 媒體與遊戲</h4>
                         <div class="word-item info">
                             <div><span class="word-english">GameLift</span><span class="word-chinese">遊戲服務器</span></div>
                             <div class="word-consequence">多人遊戲託管</div>
@@ -1528,12 +1754,12 @@
 
                     <!-- Stop vs Terminate -->
                     <div class="confusing-item">
-                        <h3 style="color: #e74c3c; border-bottom: 2px solid #e74c3c; padding-bottom: 10px; margin-bottom: 15px;">
+                        <h3 class="confusing-title danger-color">
                             🛑 Stop vs Terminate (停止 vs 終止)
                         </h3>
                         <div class="confusing-content">
                             <div class="term-explanation">
-                                <h4 style="color: #27ae60;">✅ Stop (停止)</h4>
+                                <h4 class="safe-color">✅ Stop (停止)</h4>
                                 <ul style="margin: 10px 0; padding-left: 20px;">
                                     <li><strong>作用：</strong>暫停EC2實例運行</li>
                                     <li><strong>數據：</strong>EBS卷數據保留</li>
@@ -1543,7 +1769,7 @@
                                 </ul>
                             </div>
                             <div class="term-explanation">
-                                <h4 style="color: #e74c3c;">⚠️ Terminate (終止)</h4>
+                                <h4 class="danger-color">⚠️ Terminate (終止)</h4>
                                 <ul style="margin: 10px 0; padding-left: 20px;">
                                     <li><strong>作用：</strong>永久刪除EC2實例</li>
                                     <li><strong>數據：</strong>實例存儲數據丟失</li>
@@ -1552,7 +1778,7 @@
                                     <li><strong>恢復：</strong>無法恢復，需重新創建</li>
                                 </ul>
                             </div>
-                            <div class="warning-box" style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 10px; border-radius: 5px; margin-top: 10px;">
+                            <div class="warning-box">
                                 <strong>⚠️ 重要提醒：</strong>Terminate是不可逆操作，執行前請確認！
                             </div>
                         </div>
@@ -1560,12 +1786,12 @@
 
                     <!-- EBS vs Instance Store -->
                     <div class="confusing-item">
-                        <h3 style="color: #3498db; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-bottom: 15px;">
+                        <h3 class="confusing-title info-color">
                             💾 EBS vs Instance Store (彈性塊存儲 vs 實例存儲)
                         </h3>
                         <div class="confusing-content">
                             <div class="term-explanation">
-                                <h4 style="color: #27ae60;">✅ EBS (Elastic Block Store)</h4>
+                                <h4 class="safe-color">✅ EBS (Elastic Block Store)</h4>
                                 <ul style="margin: 10px 0; padding-left: 20px;">
                                     <li><strong>位置：</strong>網絡附加存儲</li>
                                     <li><strong>持久性：</strong>實例停止後數據保留</li>
@@ -1575,7 +1801,7 @@
                                 </ul>
                             </div>
                             <div class="term-explanation">
-                                <h4 style="color: #f39c12;">⚡ Instance Store</h4>
+                                <h4 class="warning-color">⚡ Instance Store</h4>
                                 <ul style="margin: 10px 0; padding-left: 20px;">
                                     <li><strong>位置：</strong>物理附加到主機</li>
                                     <li><strong>持久性：</strong>實例停止後數據丟失</li>
@@ -1584,7 +1810,7 @@
                                     <li><strong>大小：</strong>固定大小，無法調整</li>
                                 </ul>
                             </div>
-                            <div class="tip-box" style="background: #d4edda; border: 1px solid #c3e6cb; padding: 10px; border-radius: 5px; margin-top: 10px;">
+                            <div class="tip-box">
                                 <strong>💡 使用建議：</strong>數據庫用EBS，臨時處理用Instance Store
                             </div>
                         </div>
@@ -1592,12 +1818,12 @@
 
                     <!-- Public IP vs Elastic IP -->
                     <div class="confusing-item">
-                        <h3 style="color: #9b59b6; border-bottom: 2px solid #9b59b6; padding-bottom: 10px; margin-bottom: 15px;">
+                        <h3 class="confusing-title link-color">
                             🌐 Public IP vs Elastic IP (公共IP vs 彈性IP)
                         </h3>
                         <div class="confusing-content">
                             <div class="term-explanation">
-                                <h4 style="color: #f39c12;">🔄 Public IP (公共IP)</h4>
+                                <h4 class="warning-color">🔄 Public IP (公共IP)</h4>
                                 <ul style="margin: 10px 0; padding-left: 20px;">
                                     <li><strong>分配：</strong>AWS自動分配</li>
                                     <li><strong>穩定性：</strong>實例重啟後會改變</li>
@@ -1607,7 +1833,7 @@
                                 </ul>
                             </div>
                             <div class="term-explanation">
-                                <h4 style="color: #27ae60;">📌 Elastic IP (彈性IP)</h4>
+                                <h4 class="safe-color">📌 Elastic IP (彈性IP)</h4>
                                 <ul style="margin: 10px 0; padding-left: 20px;">
                                     <li><strong>分配：</strong>用戶申請和管理</li>
                                     <li><strong>穩定性：</strong>固定不變，可重新分配</li>
@@ -1616,7 +1842,7 @@
                                     <li><strong>適用：</strong>生產環境，需要固定IP</li>
                                 </ul>
                             </div>
-                            <div class="warning-box" style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 10px; border-radius: 5px; margin-top: 10px;">
+                            <div class="warning-box">
                                 <strong>💰 費用提醒：</strong>未附加到實例的Elastic IP會產生費用！
                             </div>
                         </div>
@@ -1624,12 +1850,12 @@
 
                     <!-- Security Group vs NACL -->
                     <div class="confusing-item">
-                        <h3 style="color: #e67e22; border-bottom: 2px solid #e67e22; padding-bottom: 10px; margin-bottom: 15px;">
+                        <h3 class="confusing-title warning-color">
                             🛡️ Security Group vs NACL (安全組 vs 網絡ACL)
                         </h3>
                         <div class="confusing-content">
                             <div class="term-explanation">
-                                <h4 style="color: #27ae60;">🔒 Security Group (安全組)</h4>
+                                <h4 class="safe-color">🔒 Security Group (安全組)</h4>
                                 <ul style="margin: 10px 0; padding-left: 20px;">
                                     <li><strong>層級：</strong>實例級別防火牆</li>
                                     <li><strong>規則：</strong>只支持允許規則</li>
@@ -1639,7 +1865,7 @@
                                 </ul>
                             </div>
                             <div class="term-explanation">
-                                <h4 style="color: #e74c3c;">🚫 NACL (Network ACL)</h4>
+                                <h4 class="danger-color">🚫 NACL (Network ACL)</h4>
                                 <ul style="margin: 10px 0; padding-left: 20px;">
                                     <li><strong>層級：</strong>子網級別防火牆</li>
                                     <li><strong>規則：</strong>支持允許和拒絕規則</li>
@@ -1648,7 +1874,7 @@
                                     <li><strong>適用：</strong>子網級別的粗粒度控制</li>
                                 </ul>
                             </div>
-                            <div class="tip-box" style="background: #d4edda; border: 1px solid #c3e6cb; padding: 10px; border-radius: 5px; margin-top: 10px;">
+                            <div class="tip-box">
                                 <strong>🎯 最佳實踐：</strong>Security Group做主要控制，NACL做額外防護
                             </div>
                         </div>
@@ -1656,12 +1882,12 @@
 
                     <!-- Snapshot vs AMI vs Backup -->
                     <div class="confusing-item">
-                        <h3 style="color: #16a085; border-bottom: 2px solid #16a085; padding-bottom: 10px; margin-bottom: 15px;">
+                        <h3 class="confusing-title safe-color">
                             📸 Snapshot vs AMI vs Backup (快照 vs 鏡像 vs 備份)
                         </h3>
                         <div class="confusing-content">
                             <div class="term-explanation">
-                                <h4 style="color: #3498db;">📷 Snapshot (快照)</h4>
+                                <h4 class="info-color">📷 Snapshot (快照)</h4>
                                 <ul style="margin: 10px 0; padding-left: 20px;">
                                     <li><strong>對象：</strong>EBS卷的時點備份</li>
                                     <li><strong>內容：</strong>只包含數據，不包含配置</li>
@@ -1670,7 +1896,7 @@
                                 </ul>
                             </div>
                             <div class="term-explanation">
-                                <h4 style="color: #e74c3c;">💿 AMI (Amazon Machine Image)</h4>
+                                <h4 class="danger-color">💿 AMI (Amazon Machine Image)</h4>
                                 <ul style="margin: 10px 0; padding-left: 20px;">
                                     <li><strong>對象：</strong>完整的實例模板</li>
                                     <li><strong>內容：</strong>操作系統+應用+配置</li>
@@ -1679,7 +1905,7 @@
                                 </ul>
                             </div>
                             <div class="term-explanation">
-                                <h4 style="color: #f39c12;">🗄️ AWS Backup</h4>
+                                <h4 class="warning-color">🗄️ AWS Backup</h4>
                                 <ul style="margin: 10px 0; padding-left: 20px;">
                                     <li><strong>對象：</strong>多種AWS資源的統一備份</li>
                                     <li><strong>內容：</strong>跨服務的備份管理</li>
@@ -1692,12 +1918,12 @@
 
                     <!-- On-Demand vs Reserved vs Spot -->
                     <div class="confusing-item">
-                        <h3 style="color: #8e44ad; border-bottom: 2px solid #8e44ad; padding-bottom: 10px; margin-bottom: 15px;">
+                        <h3 class="confusing-title link-color">
                             💰 On-Demand vs Reserved vs Spot (按需 vs 預留 vs 競價)
                         </h3>
                         <div class="confusing-content">
                             <div class="term-explanation">
-                                <h4 style="color: #e74c3c;">💸 On-Demand (按需實例)</h4>
+                                <h4 class="danger-color">💸 On-Demand (按需實例)</h4>
                                 <ul style="margin: 10px 0; padding-left: 20px;">
                                     <li><strong>價格：</strong>最貴，按小時計費</li>
                                     <li><strong>承諾：</strong>無需長期承諾</li>
@@ -1706,7 +1932,7 @@
                                 </ul>
                             </div>
                             <div class="term-explanation">
-                                <h4 style="color: #27ae60;">💎 Reserved (預留實例)</h4>
+                                <h4 class="safe-color">💎 Reserved (預留實例)</h4>
                                 <ul style="margin: 10px 0; padding-left: 20px;">
                                     <li><strong>價格：</strong>最多可節省75%</li>
                                     <li><strong>承諾：</strong>1年或3年期承諾</li>
@@ -1715,7 +1941,7 @@
                                 </ul>
                             </div>
                             <div class="term-explanation">
-                                <h4 style="color: #f39c12;">⚡ Spot (競價實例)</h4>
+                                <h4 class="warning-color">⚡ Spot (競價實例)</h4>
                                 <ul style="margin: 10px 0; padding-left: 20px;">
                                     <li><strong>價格：</strong>最多可節省90%</li>
                                     <li><strong>承諾：</strong>無承諾，但可能被中斷</li>
@@ -1723,7 +1949,7 @@
                                     <li><strong>適用：</strong>容錯的批處理工作負載</li>
                                 </ul>
                             </div>
-                            <div class="warning-box" style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 10px; border-radius: 5px; margin-top: 10px;">
+                            <div class="warning-box">
                                 <strong>⚠️ 注意：</strong>Spot實例可能隨時被AWS回收，需要做好容錯處理！
                             </div>
                         </div>
@@ -1731,12 +1957,12 @@
 
                     <!-- Single-AZ vs Multi-AZ -->
                     <div class="confusing-item">
-                        <h3 style="color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 10px; margin-bottom: 15px;">
+                        <h3 class="confusing-title text-color">
                             🏢 Single-AZ vs Multi-AZ (單可用區 vs 多可用區)
                         </h3>
                         <div class="confusing-content">
                             <div class="term-explanation">
-                                <h4 style="color: #f39c12;">🏠 Single-AZ (單可用區)</h4>
+                                <h4 class="warning-color">🏠 Single-AZ (單可用區)</h4>
                                 <ul style="margin: 10px 0; padding-left: 20px;">
                                     <li><strong>部署：</strong>資源部署在單個可用區</li>
                                     <li><strong>成本：</strong>較低</li>
@@ -1745,7 +1971,7 @@
                                 </ul>
                             </div>
                             <div class="term-explanation">
-                                <h4 style="color: #27ae60;">🏢 Multi-AZ (多可用區)</h4>
+                                <h4 class="safe-color">🏢 Multi-AZ (多可用區)</h4>
                                 <ul style="margin: 10px 0; padding-left: 20px;">
                                     <li><strong>部署：</strong>資源跨多個可用區</li>
                                     <li><strong>成本：</strong>較高</li>
@@ -1753,7 +1979,7 @@
                                     <li><strong>適用：</strong>生產環境</li>
                                 </ul>
                             </div>
-                            <div class="tip-box" style="background: #d4edda; border: 1px solid #c3e6cb; padding: 10px; border-radius: 5px; margin-top: 10px;">
+                            <div class="tip-box">
                                 <strong>🎯 建議：</strong>生產環境務必使用Multi-AZ部署確保高可用性
                             </div>
                         </div>
@@ -1761,12 +1987,12 @@
 
                     <!-- IAM User vs Role vs Group -->
                     <div class="confusing-item">
-                        <h3 style="color: #d35400; border-bottom: 2px solid #d35400; padding-bottom: 10px; margin-bottom: 15px;">
+                        <h3 class="confusing-title danger-color">
                             👥 IAM User vs Role vs Group (用戶 vs 角色 vs 組)
                         </h3>
                         <div class="confusing-content">
                             <div class="term-explanation">
-                                <h4 style="color: #3498db;">👤 IAM User (IAM用戶)</h4>
+                                <h4 class="info-color">👤 IAM User (IAM用戶)</h4>
                                 <ul style="margin: 10px 0; padding-left: 20px;">
                                     <li><strong>身份：</strong>代表個人或應用</li>
                                     <li><strong>憑證：</strong>有永久的訪問密鑰</li>
@@ -1775,7 +2001,7 @@
                                 </ul>
                             </div>
                             <div class="term-explanation">
-                                <h4 style="color: #e74c3c;">🎭 IAM Role (IAM角色)</h4>
+                                <h4 class="danger-color">🎭 IAM Role (IAM角色)</h4>
                                 <ul style="margin: 10px 0; padding-left: 20px;">
                                     <li><strong>身份：</strong>可被假設的身份</li>
                                     <li><strong>憑證：</strong>臨時安全憑證</li>
@@ -1784,7 +2010,7 @@
                                 </ul>
                             </div>
                             <div class="term-explanation">
-                                <h4 style="color: #27ae60;">👥 IAM Group (IAM組)</h4>
+                                <h4 class="safe-color">👥 IAM Group (IAM組)</h4>
                                 <ul style="margin: 10px 0; padding-left: 20px;">
                                     <li><strong>身份：</strong>用戶的集合</li>
                                     <li><strong>憑證：</strong>組本身沒有憑證</li>
@@ -1792,7 +2018,7 @@
                                     <li><strong>適用：</strong>批量管理用戶權限</li>
                                 </ul>
                             </div>
-                            <div class="tip-box" style="background: #d4edda; border: 1px solid #c3e6cb; padding: 10px; border-radius: 5px; margin-top: 10px;">
+                            <div class="tip-box">
                                 <strong>🔐 最佳實踐：</strong>EC2使用Role，人員使用User，批量管理用Group
                             </div>
                         </div>
@@ -1948,5 +2174,30 @@
         `;
         document.head.appendChild(style);
     </script>
+<button id="darkModeToggle">Toggle Dark Mode</button>
+
+<script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    // Check for user's preferred mode in localStorage
+    const currentMode = localStorage.getItem('theme');
+    if (currentMode) {
+        body.classList.add(currentMode);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // Check for OS dark mode preference
+        body.classList.add('dark-mode');
+    }
+
+    darkModeToggle.addEventListener('click', () => {
+        if (body.classList.contains('dark-mode')) {
+            body.classList.remove('dark-mode');
+            localStorage.setItem('theme', 'light-mode');
+        } else {
+            body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark-mode');
+        }
+    });
+</script>
 </body>
 </html>
