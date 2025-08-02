@@ -4,7 +4,7 @@
 
 ## 🌐 在線訪問
 
-**🔗 立即使用：[https://co2sou.github.io/aws-english](https://co2sou.github.io/aws-english)**
+**🔗 立即使用：[https://xiaonaofua.github.io/aws-english](https://xiaonaofua.github.io/aws-english)**
 
 > 💡 建議將此網址加入書籤，隨時查閱AWS詞彙！
 
@@ -81,7 +81,7 @@ CodeCommit, CodeBuild, CodeDeploy, CloudFormation, X-Ray 等
 
 ## 🚀 使用方法
 
-1. **在線訪問**: [https://co2sou.github.io/aws-english](https://co2sou.github.io/aws-english)
+1. **在線訪問**: [https://xiaonaofua.github.io/aws-english](https://xiaonaofua.github.io/aws-english)
 2. **本地部署**: 下載項目文件到本地，用瀏覽器打開 `index.html`
 3. **搜索功能**: 在搜索框中輸入英文或中文關鍵詞
 4. **導航切換**: 點擊頂部導航按鈕切換不同模塊
